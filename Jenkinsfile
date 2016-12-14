@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
 
-def config = [emailRecipients: 'tim.downey@adp.com']
+def config = [emailRecipients: 'your.email.here@email.com']
 def buildStateHasChanged = false;
 
 pipeline {
-    agent label:'docker', docker: 'maven:3.3.9-alpine'
+    agent docker: 'maven:3.3.9-alpine'
 
     jobProperties { 
         buildDiscarder(logRotator(numToKeepStr:'10'))
